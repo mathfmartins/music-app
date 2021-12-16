@@ -1,0 +1,33 @@
+@use "variables";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+i {
+  color: variables.$white-color;
+  font-size: 1.2rem;
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 1px;
+  height: 6px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: variables.$bg-scrollbar-color;
+  border-radius: 20px;
+  scrollbar-width: 1px;
+  scrollbar-width: thin;
+}

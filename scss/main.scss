@@ -1,0 +1,229 @@
+@use "reset";
+@use "variables";
+@use "mixins";
+
+body {
+  background-color: variables.$main-color;
+
+  display: grid;
+  grid-template-areas:
+    "menu main main"
+    "menu main main"
+    "menu main main";
+  grid-template-columns: 1fr 40% 40%;
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+p {
+  color: variables.$p-color;
+  font-size: 0.9;
+}
+
+a:hover {
+  color: variables.$white-color;
+}
+
+.active {
+  color: variables.$white-color !important;
+}
+
+h1 {
+  color: variables.$white-color;
+  font-size: 1rem;
+}
+
+img {
+  transition: 0.5s;
+}
+
+.menu {
+  background-color: variables.$black-color;
+  grid-area: menu;
+  display: grid;
+  grid-template-rows: 200px 200px 200px;
+  padding: 25px;
+  text-align: center;
+  &__profile {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  &__edit {
+    color: variables.$white-color;
+    cursor: pointer;
+  }
+  &__img {
+    width: 65px;
+    height: 65px;
+    border-radius: 5px;
+  }
+
+  &__name {
+    color: variables.$white-color;
+    font-weight: 600;
+    margin-left: 5px;
+    line-height: 2;
+  }
+
+  &__ul {
+    width: 55%;
+    margin: 0 auto;
+    padding-top: 10px;
+    border-top: 1px solid rgba(20, 20, 20, 0.994);
+  }
+
+  &__ul a {
+    color: rgba(58, 57, 57, 0.994);
+    font-size: 0.9rem;
+    font-weight: 600;
+    line-height: 2;
+    transition: 0.5s;
+    &:hover {
+      color: variables.$white-color;
+    }
+  }
+}
+
+.fas.fa-cog {
+  font-size: 0.8rem;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+.main {
+  max-width: 1200px;
+  margin: 2rem auto;
+  grid-area: main;
+  display: grid;
+  grid-template-areas:
+    "search     search"
+    "featured   featured"
+    "views      tracks";
+  grid-template-columns: repeat(2, minmax(300px, 500px));
+
+  &__img:hover,
+  &__views.img:hover,
+  &__tracks-img:hover {
+    filter: grayscale(0%);
+    filter: brightness(100%);
+  }
+
+  &__h1 {
+    display: block;
+    margin-left: 10px;
+  }
+
+  &__search {
+    grid-area: search;
+    display: flex;
+  }
+
+  &__search-input {
+    background-color: variables.$main-color;
+    border: none;
+    width: 55vw;
+    margin-top: 20px;
+    padding: 10px;
+    font-weight: 600;
+    color: white;
+    outline: none;
+  }
+
+  &__featured-playlists {
+    display: flex;
+    overflow-x: auto;
+    align-items: center;
+    grid-area: featured;
+  }
+
+  &__views {
+    grid-area: views;
+    max-width: 300px;
+    margin-top: 20px;
+  }
+  &__views-h1 {
+    margin-bottom: 20px;
+  }
+
+  &__views-profile {
+    display: flex;
+    margin-bottom: 20px;
+    filter: grayscale(50%);
+    transition: 0.2s;
+    cursor: pointer;
+  }
+
+  &__views-profile:hover,
+  &__views-p:hover,
+  &__.sub:hover {
+    transition: 0.2s;
+    color: #e5e5e5e7;
+    filter: grayscale(0%);
+    filter: brightness(100%);
+  }
+
+  &__tracks {
+    grid-area: tracks;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    display: flex;
+    overflow-x: auto;
+    align-items: center;  
+  }
+
+  &__tracks-card > p {
+    margin-left: 10px;
+  }
+
+  &__img {
+    filter: grayscale(55%);
+    transition: 0.3s;
+    width: 320px;
+    height: 220px;
+    padding: 0.5rem;
+    border-radius: 10%;
+    &:hover {
+      width: 340px;
+      height: 240px;
+      transition: 0.2s;
+    }
+  }
+
+  &__views-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    filter: grayscale(55%);
+  }
+
+  &__p {
+    margin-top: 5px;
+    margin-left: 10px;
+  }
+
+  &__views-p {
+    margin-left: 15px;
+    line-height: 1;
+    align-self: center;
+    &.albums {
+      margin-left: auto;
+      align-self: center;
+    }
+  }
+  &__tracks-img {
+    filter: grayscale(55%);
+    width: 125px;
+    height: 125px;
+    border-radius: 5px;
+    margin: 10px;
+    cursor: pointer;
+    
+  }
+}
+
+.sub {
+  color: rgba(58, 57, 57, 0.994);
+  font-size: 0.6rem;
+  font-weight: 600;
+}
