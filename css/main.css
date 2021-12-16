@@ -32,7 +32,7 @@ i {
 }
 
 body {
-  background-color: #17002b;
+  background: linear-gradient(1000deg, #040517, #17002b);
   display: grid;
   grid-template-areas: "menu main main" "menu main main" "menu main main";
   grid-template-columns: 1fr 40% 40%;
@@ -173,11 +173,11 @@ img {
   background-color: #17002b;
   border: none;
   width: 55vw;
-  margin-top: 20px;
   padding: 10px;
   font-weight: 600;
   color: white;
   outline: none;
+  border-radius: 8px;
 }
 .main__featured-playlists {
   display: flex;

@@ -4,7 +4,8 @@
 @import "mixins";
 
 body {
-  background-color: variables.$main-color;
+$blue-color: rgb(32, 15, 86);
+  background: linear-gradient(1000deg, variables.$black-color, variables.$main-color);
   display: grid;
   grid-template-areas:
     "menu main main"
@@ -156,11 +157,11 @@ img {
     background-color: variables.$main-color;
     border: none;
     width: 55vw;
-    margin-top: 20px;
     padding: 10px;
     font-weight: 600;
     color: white;
     outline: none;
+    border-radius: 8px;
   }
 
   &__featured-playlists {
